@@ -9,11 +9,16 @@
 
 ### 1. `>> cd app`
 ### 2. `>> npm i`
-### 3. `>> npm run dev`
+### 3. `>> json-server --watch src/data/db.json --port 3005`
+### 4. `>> npm run dev`
 
 ## Change list:
 
 ## `/app`:
+
+### `JSON-server`:
+- БД. Создана и сконфигурирована
+- `>> npm install -g json-server@0.17.4`
 
 ### `/.editorconfig`:
 - создан и сконфигурирован
