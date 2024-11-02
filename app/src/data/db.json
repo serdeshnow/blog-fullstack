@@ -6,6 +6,13 @@
 			"password": "123qwerty",
 			"registered_at": "2025-09-23",
 			"role_id": 0
+		},
+		{
+			"id": "002",
+			"login": "Setqbyte",
+			"password": "123qwerty",
+			"registered_at": "2025-09-23",
+			"role_id": 0
 		}
 	],
 	"roles": [
@@ -56,6 +63,5 @@
 			"published_at": "2032-07-21"
 		}
 	],
-	"comments": [
-	]
+	"comments": []
 }
