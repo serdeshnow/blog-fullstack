@@ -1,9 +1,11 @@
 import './styles/App.scss';
-import { server } from './bff';
+import './fontello/css/fontello.css'
 
 export const App = () => {
-	const lol = server.authorize('Serdeshnowf', '123qwerty');
-	console.log(lol);
-
-	return <></>;
+	return (
+		<>
+			<i className="icon-calendar" style={{ fontSize: '80px' }} />
+			<i className="icon-calendar"  />
+		</>
+	);
 };

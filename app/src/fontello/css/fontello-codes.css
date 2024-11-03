@@ -1,0 +1,30 @@
+.icon-calendar:before {
+	content: '\e801';
+} /* '' */
+.icon-comment:before {
+	content: '\e802';
+} /* '' */
+.icon-delete:before {
+	content: '\e804';
+} /* '' */
+.icon-exit:before {
+	content: '\e805';
+} /* '' */
+.icon-edit:before {
+	content: '\e806';
+} /* '' */
+.icon-fastfood:before {
+	content: '\e807';
+} /* '' */
+.icon-groups:before {
+	content: '\e808';
+} /* '' */
+.icon-new-post:before {
+	content: '\e809';
+} /* '' */
+.icon-save:before {
+	content: '\e80a';
+} /* '' */
+.icon-send:before {
+	content: '\e80b';
+} /* '' */
