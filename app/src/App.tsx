@@ -1,11 +1,3 @@
-import './styles/App.scss';
-import './fontello/css/fontello.css'
+import { AppRoutes } from './routes';
 
-export const App = () => {
-	return (
-		<>
-			<i className="icon-calendar" style={{ fontSize: '80px' }} />
-			<i className="icon-calendar"  />
-		</>
-	);
-};
+export const App = () => <AppRoutes />;
