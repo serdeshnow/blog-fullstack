@@ -5,7 +5,9 @@ export const RootLayout = () => {
 	return (
 		<>
 			<Header/>
-			<Outlet />
+			<main className="py-16 flex flex-1 items-end">
+				<Outlet />
+			</main>
 			<Footer/>
 		</>
 	);
