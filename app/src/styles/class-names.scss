@@ -1,3 +1,11 @@
 .flex-default {
 	@apply flex items-center justify-between;
 }
+
+.bg-green {
+	background-color: var(--color-green-500);
+}
+
+.text-light {
+	color: var(--color-light-500);
+}

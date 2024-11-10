@@ -1,3 +1,6 @@
 * {
-	--variable-example: 0;
+	--color-green-500: #274f34;
+	--color-gray-500: #e2e4e3;
+	--color-light-500: #fdfffc;
+	--color-dark-500: #353535;
 }
