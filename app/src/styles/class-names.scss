@@ -2,10 +2,10 @@
 	@apply flex items-center justify-between;
 }
 
-.bg-green {
-	background-color: var(--color-green-500);
+.green-hover-active {
+	@apply hover:text-light-600 active:text-light-500 transition-colors duration-150 ease-in-out
 }
 
-.text-light {
-	color: var(--color-light-500);
+.bg-green {
+	background-color: var(--color-green-500);
 }
