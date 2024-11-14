@@ -3,9 +3,21 @@
 }
 
 .green-hover-active {
-	@apply hover:text-light-600 active:text-light-500 transition-colors duration-150 ease-in-out
+	@apply hover:text-light-600 active:text-light-500 transition-colors duration-150 ease-in-out;
 }
 
-.bg-green {
-	background-color: var(--color-green-500);
+.padding--width {
+	@apply xl:w-3/5 w-5/6;
+}
+
+.form-element {
+	@apply w-full px-4 py-3 border-gray-500 border rounded-lg text-lg shadow-lg focus:outline-none;
+
+	&-input {
+		@apply bg-light-500 text-dark-500;
+	}
+
+	&-button {
+		@apply bg-orange-500 text-light-500 font-medium;
+	}
 }

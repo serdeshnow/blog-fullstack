@@ -1,1 +1,2 @@
-export * from './RootLayout.tsx'
+export * from './RootLayout/RootLayout.tsx'
+export * from './Auth/Auth.tsx'

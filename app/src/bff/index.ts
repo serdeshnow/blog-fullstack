@@ -1,4 +1,4 @@
-export * from './bff.ts';
+export * from './server.ts';
 export * from './generate-date.ts';
 export * from './get-users.ts';
 export * from './get-user.ts';

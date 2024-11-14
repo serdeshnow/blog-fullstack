@@ -1,2 +1,2 @@
-export * from './Header/Header.tsx';
-export * from './Footer/Footer.tsx';
+export * from './Logo/Logo.tsx';
+export * from './Icon/Icon.tsx';
