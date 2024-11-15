@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-import { RootLayout, Auth } from '../pages';
+import { RootLayout, Auth, Register } from '../pages';
 
 export const AppRoutes = () => {
 	return (
 		<Routes>
-			<Route path="/login" element={<Auth/>} />
-			<Route path="/register" element={<>Регистрация</>} />
+			<Route path="/login" element={<Auth />} />
+			<Route path="/register" element={<Register />} />
 			<Route path="/" element={<RootLayout />}>
 				<Route index element={<>Главная</>} />
 				<Route path="users" element={<>Пользователи</>} />

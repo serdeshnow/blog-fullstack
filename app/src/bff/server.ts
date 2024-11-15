@@ -1,5 +1,5 @@
 import { IUser } from '../constants';
-import { createSession, getUser } from './';
+import { createSession, getUser, sessions } from './';
 import { addUser } from './add-user.ts';
 
 export const server = {
@@ -22,7 +22,12 @@ export const server = {
 
 		return {
 			error: null,
-			response: createSession(user.role_id),
+			response: {
+				id: user.id,
+				login: user.login,
+				roleId: user.role_id,
+				session: sessions.create(user),
+			},
 		};
 	},
 
