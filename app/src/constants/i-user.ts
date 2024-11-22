@@ -1,5 +1,3 @@
-import type { Role } from './role.ts';
-
 export interface IUser {
 	id: string;
 	login: string;
@@ -9,12 +7,3 @@ export interface IUser {
 }
 
 export type TUser = IUser | null;
-
-export interface IUserSession {
-	id: string;
-	login: string;
-	roleId: Role;
-	session: string;
-}
-
-export type TUserSession = IUserSession | null;

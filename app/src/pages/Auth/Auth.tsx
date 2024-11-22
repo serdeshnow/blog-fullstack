@@ -50,11 +50,11 @@ export const Auth: FC = () => {
 		server.authorize(login, password).then(({ response, error }) => {
 			if (error) {
 				setServerError(`Request error: ${error}`);
+				return;
 			} else {
+				dispatch(setUser(response));
 				navigate('/');
 			}
-
-			dispatch(setUser(response));
 		});
 	};
 

@@ -1,3 +1,4 @@
+// TODO: complete TPayload
 type TPayload = boolean | string;
 
 export interface IAction {
