@@ -1,9 +1,9 @@
-import { IUser } from '../constants';
-import { createSession, getUser, sessions } from './';
+import { IUser, TUser } from '../constants';
+import { getUser, sessions } from './';
 import { addUser } from './add-user.ts';
 
 export const server = {
-	async authorize(authLogin: string, authPassword: string) {
+	async authorize(authLogin: string, authPassword: string): Promise<{error: string | null, response: Partial<TUser>}> {
 		const user: IUser = await getUser(authLogin);
 
 		if (!user) {
@@ -25,13 +25,13 @@ export const server = {
 			response: {
 				id: user.id,
 				login: user.login,
-				roleId: user.role_id,
+				role_id: user.role_id,
 				session: sessions.create(user),
 			},
 		};
 	},
 
-	async register(regLogin: string, regPassword: string) {
+	async register(regLogin: string, regPassword: string): Promise<void> {
 		const user: IUser = await getUser(regLogin);
 
 		if (user) {
@@ -45,7 +45,16 @@ export const server = {
 
 		return {
 			error: null,
-			response: createSession(2),
+			response: {
+				id: user.id,
+				login: user.login,
+				roleId: user.role_id,
+				session: sessions.create(user),
+			},
 		};
+	},
+
+	async logout(session: string): Promise<void> {
+		sessions.remove(session);
 	},
 };

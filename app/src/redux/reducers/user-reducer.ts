@@ -1,21 +1,24 @@
-import { ActionType, IAction, Role } from '../../constants';
+import { ActionType, IAction, IUser, Role } from '../../constants';
 
-const initialUserState = {
+// Инициализируем начальное состояние с типом IUser
+const initialUserState: IUser = {
 	id: null,
 	login: null,
-	roleId: Role.guest,
-	session: null,
+	role_id: Role.guest,
+	session: "",
 };
 
-export const userReducer = (state = initialUserState, action: IAction) => {
+// Типизируем редьюсер с учетом того, что состояние - это IUser
+export const userReducer = (state: IUser = initialUserState, action: IAction): IUser => {
 	switch (action.type) {
-		case ActionType.SET_USER: {
+		case ActionType.SET_USER:
 			return {
 				...state,
-				...(action.payload as Partial<typeof state>),
+				...(action.payload as Partial<IUser>), // частичное обновление
 			};
-		}
+		case ActionType.LOGOUT:
+			return initialUserState; // возвращаем начальное состояние
 		default:
-			return state;
+			return state; // возвращаем текущее состояние
 	}
 };

@@ -52,6 +52,7 @@ export const Auth: FC = () => {
 				setServerError(`Request error: ${error}`);
 				return;
 			} else {
+				console.log("dispatching:", login, password)
 				dispatch(setUser(response));
 				navigate('/');
 			}

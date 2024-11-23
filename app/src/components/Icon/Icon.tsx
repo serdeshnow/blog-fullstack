@@ -15,7 +15,7 @@ export const Icon: React.FC<Props> = ({
 	children,
 }) => {
 	return (
-		<Link to={linkTo} className="flex-default gap-2.5">
+		<Link to={linkTo} className="flex-default gap-2.5 green-hover-active">
 			<i className={`icon-${iconId}`} style={{ fontSize: fontSize }} />
 			{children}
 		</Link>
