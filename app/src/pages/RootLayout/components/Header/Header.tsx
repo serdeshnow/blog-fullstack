@@ -7,7 +7,7 @@ import {
 	selectUserLogin,
 	selectUserRole,
 	selectUserSession,
-	logout
+	logout,
 } from '../../../../redux';
 
 export const Header: React.FC = () => {

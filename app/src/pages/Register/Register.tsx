@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { server } from '../../bff';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserRole, setUser } from '../../redux';
-import { IRegister, regFormSchema, Role} from '../../constants';
+import { IRegister, regFormSchema, Role } from '../../constants';
 import { Input } from '../../components';
 
 export const Register: FC = () => {
