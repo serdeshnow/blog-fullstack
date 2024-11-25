@@ -7,8 +7,8 @@ import {
 	selectUserLogin,
 	selectUserRole,
 	selectUserSession,
-} from '../../../../redux/selectors';
-import { logout } from '../../../../redux/actions';
+	logout
+} from '../../../../redux';
 
 export const Header: React.FC = () => {
 	const navigate = useNavigate();
