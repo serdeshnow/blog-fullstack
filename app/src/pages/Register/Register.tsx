@@ -86,7 +86,7 @@ export const Register: FC = () => {
 					disabled={!!errorMessage}
 					className="form-element form-element-button"
 				>
-					Войти
+					Зарегистрироваться
 				</button>
 			</form>
 			{errorMessage && (
