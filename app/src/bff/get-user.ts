@@ -1,8 +1,7 @@
-import { IUser } from '../interfaces';
-import { getUsers } from './get-users.ts';
+import type { IUser } from '../constants';
 
-export const getUser = async (login: string) => {
-	const users = await getUsers();
-
-	return users.data.find((user: IUser) => user.login === login);
+export const getUser = async (login: string): Promise<IUser> => {
+	return fetch(`http://localhost:3005/users?login=${login}`)
+		.then((response) => response.json())
+		.then((user) => user[0]);
 };

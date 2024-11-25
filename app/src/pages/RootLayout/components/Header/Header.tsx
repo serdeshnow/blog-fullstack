@@ -3,8 +3,12 @@ import { Icon, Logo } from '../../../../components';
 import React from 'react';
 import { Role } from '../../../../constants';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUserLogin, selectUserRole, selectUserSession } from '../../../../redux/selectors';
-import { logout} from '../../../../redux/actions';
+import {
+	selectUserLogin,
+	selectUserRole,
+	selectUserSession,
+} from '../../../../redux/selectors';
+import { logout } from '../../../../redux/actions';
 
 export const Header: React.FC = () => {
 	const navigate = useNavigate();
@@ -13,11 +17,10 @@ export const Header: React.FC = () => {
 	const roleId = useSelector(selectUserRole);
 	const login = useSelector(selectUserLogin);
 	const session = useSelector(selectUserSession);
-
+	console.log(login);
 
 	return (
-		<header
-			className="padding--width mx-10 flex-default text-center bg-green-500 mt-1 p-1 rounded text-light-500 shadow-lg transition-all duration-300 ease-in-out">
+		<header className="padding--width mx-10 flex-default text-center bg-green-500 mt-1 p-1 rounded text-light-500 shadow-lg transition-all duration-300 ease-in-out">
 			<ul className="flex-default gap-5">
 				<li>
 					<button onClick={() => navigate(-1)}>
@@ -45,9 +48,11 @@ export const Header: React.FC = () => {
 				) : (
 					<li className="flex-default gap-5">
 						<button onClick={() => dispatch(logout(session))}>
-							<span className="cursor-default green-hover-active"> {login} </span>
+							<span className="cursor-default green-hover-active">{login}</span>
 						</button>
-						<Icon linkTo="/login" iconId="exit" />
+						<button onClick={() => dispatch(logout(session))}>
+							<Icon linkTo="/login" iconId="exit" />
+						</button>
 					</li>
 				)}
 			</ul>

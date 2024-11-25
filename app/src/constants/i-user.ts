@@ -7,7 +7,6 @@ export interface IUser {
 	registered_at?: string;
 	role_id: Role;
 	session: string;
-};
-
+}
 
 export type TUser = IUser | null;

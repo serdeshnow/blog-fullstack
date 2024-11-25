@@ -1,12 +1,12 @@
-import { ActionType, type IUser } from '../../constants';
+import { ActionType } from '../../constants';
 import { server } from '../../bff';
 
 export const logout = (session: string) => {
-	server.logout(session).then((result) => {
-		console.log('removed from server:', result)
+	server.logout(session).then(() => {
+		console.log('removed session from server');
 	});
 
 	return {
 		type: ActionType.LOGOUT,
-	}
-}
+	};
+};

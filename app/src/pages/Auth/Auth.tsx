@@ -1,12 +1,14 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { server } from '../../bff';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { Input } from '../../components';
 import { setUser } from '../../redux/actions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
+import { selectUserRole } from '../../redux/selectors';
+import { Role } from '../../constants';
 
 const authFormSchema = yup.object().shape({
 	login: yup
@@ -26,6 +28,7 @@ const authFormSchema = yup.object().shape({
 export const Auth: FC = () => {
 	const {
 		register,
+		reset,
 		handleSubmit,
 		formState: { errors },
 	} = useForm({
@@ -37,7 +40,26 @@ export const Auth: FC = () => {
 	});
 
 	const dispatch = useDispatch();
-	const navigate = useNavigate();
+	const store = useStore();
+
+	// const wasLogout = selectAppWasLogout();
+	const roleId = useSelector(selectUserRole);
+
+	useEffect(() => {
+		// @ts-expect-error useStore doesn't see reducers
+		let currentWasLogout = store.getState().app.wasLogout;
+		const unsubscribe = store.subscribe(() => {
+			const previousWasLogout = currentWasLogout;
+			// @ts-expect-error useStore doesn't see reducers
+			currentWasLogout = store.getState().app.wasLogout;
+
+			if (currentWasLogout !== previousWasLogout) {
+				reset();
+			}
+		});
+
+		return unsubscribe;
+	}, [reset, store]);
 
 	interface IAuth {
 		login: string;
@@ -52,15 +74,19 @@ export const Auth: FC = () => {
 				setServerError(`Request error: ${error}`);
 				return;
 			} else {
-				console.log("dispatching:", login, password)
+				console.log('dispatching:', login, password);
 				dispatch(setUser(response));
-				navigate('/');
+				// navigate('/');
 			}
 		});
 	};
 
 	const formError = errors?.login?.message || errors?.password?.message;
 	const errorMessage = formError || serverError;
+
+	if (roleId !== Role.guest) {
+		return <Navigate to="/" />;
+	}
 
 	return (
 		<section className="padding--width flex flex-col items-center justify-center gap-5">

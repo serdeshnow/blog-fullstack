@@ -1,15 +1,16 @@
 import { ActionType, IAction, IUser, Role } from '../../constants';
+import type { Reducer } from 'redux';
 
 // Инициализируем начальное состояние с типом IUser
 const initialUserState: IUser = {
 	id: null,
 	login: null,
 	role_id: Role.guest,
-	session: "",
+	session: '',
 };
 
 // Типизируем редьюсер с учетом того, что состояние - это IUser
-export const userReducer = (state: IUser = initialUserState, action: IAction): IUser => {
+export const userReducer:Reducer<IUser, IAction> = (state: IUser = initialUserState, action: IAction): IUser => {
 	switch (action.type) {
 		case ActionType.SET_USER:
 			return {
