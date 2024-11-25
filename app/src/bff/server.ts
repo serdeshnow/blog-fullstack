@@ -6,7 +6,7 @@ export const server = {
 	async authorize(
 		authLogin: string,
 		authPassword: string,
-	): Promise<{ error: string | null; response: Partial<TUser> }> {
+	): Promise<{ error: string | null; response: TUser }> {
 		const user: IUser = await getUser(authLogin);
 
 		if (!user) {

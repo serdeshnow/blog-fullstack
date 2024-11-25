@@ -17,7 +17,6 @@ export const Header: React.FC = () => {
 	const roleId = useSelector(selectUserRole);
 	const login = useSelector(selectUserLogin);
 	const session = useSelector(selectUserSession);
-	console.log(login);
 
 	return (
 		<header className="padding--width mx-10 flex-default text-center bg-green-500 mt-1 p-1 rounded text-light-500 shadow-lg transition-all duration-300 ease-in-out">

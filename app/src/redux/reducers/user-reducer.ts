@@ -10,7 +10,10 @@ const initialUserState: IUser = {
 };
 
 // Типизируем редьюсер с учетом того, что состояние - это IUser
-export const userReducer:Reducer<IUser, IAction> = (state: IUser = initialUserState, action: IAction): IUser => {
+export const userReducer: Reducer<IUser, IAction> = (
+	state: IUser = initialUserState,
+	action: IAction,
+): IUser => {
 	switch (action.type) {
 		case ActionType.SET_USER:
 			return {

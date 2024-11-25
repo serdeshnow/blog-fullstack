@@ -1,6 +1,6 @@
-import type { Role } from './role.ts';
+import type { Role } from '../enums/role.ts';
 
-export interface IUser {
+interface IUser {
 	id: string | null;
 	login: string | null;
 	password?: string;
