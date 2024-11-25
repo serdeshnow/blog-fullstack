@@ -5,14 +5,12 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { server } from '../../bff';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserRole, setUser } from '../../redux';
-import { IRegister, regFormSchema, Role } from '../../constants';
+import { IRegister, regFormSchema, Role} from '../../constants';
 import { Input } from '../../components';
-import { useResetForm } from '../../hooks';
 
 export const Register: FC = () => {
 	const {
 		register,
-		reset,
 		handleSubmit,
 		formState: { errors },
 	} = useForm({
@@ -28,8 +26,6 @@ export const Register: FC = () => {
 	const roleId = useSelector(selectUserRole);
 
 	const [serverError, setServerError] = useState<string>('');
-
-	useResetForm(reset);
 
 	const onSubmit = ({ login, password }: IRegister) => {
 		server.register(login, password).then(({ response, error }) => {
@@ -55,7 +51,7 @@ export const Register: FC = () => {
 		<section className="padding--width flex flex-col items-center justify-center gap-5">
 			<h3 className="text-3xl font-semibold">Регистрация</h3>
 			<form
-				onSubmit={handleSubmit(() => onSubmit)}
+				onSubmit={handleSubmit(onSubmit)}
 				className="flex-default flex-col gap-5 w-1/3"
 			>
 				<Input

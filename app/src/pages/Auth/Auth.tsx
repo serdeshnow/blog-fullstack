@@ -61,7 +61,7 @@ export const Auth: FC = () => {
 		<section className="padding--width flex flex-col items-center justify-center gap-5">
 			<h3 className="text-3xl font-semibold">Вход</h3>
 			<form
-				onSubmit={handleSubmit(() => onSubmit)}
+				onSubmit={handleSubmit(onSubmit)}
 				className="flex-default flex-col gap-5 w-1/3"
 			>
 				<Input
