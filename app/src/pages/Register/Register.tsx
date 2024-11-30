@@ -6,7 +6,7 @@ import { server } from '../../bff';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserRole, setUser } from '../../redux';
 import { IRegister, regFormSchema, Role } from '../../constants';
-import { Input } from '../../components';
+import { Input, Section, Title } from '../../components';
 
 export const Register: FC = () => {
 	const {
@@ -48,8 +48,8 @@ export const Register: FC = () => {
 	}
 
 	return (
-		<section className="padding--width flex flex-col items-center justify-center gap-5">
-			<h3 className="text-3xl font-semibold">Регистрация</h3>
+		<Section>
+			<Title title="Регистрация"/>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
 				className="flex-default flex-col gap-5 w-1/3"
@@ -98,6 +98,6 @@ export const Register: FC = () => {
 					войти
 				</Link>
 			</p>
-		</section>
+		</Section>
 	);
 };

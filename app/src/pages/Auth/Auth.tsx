@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserRole, setUser } from '../../redux';
 import { server } from '../../bff';
-import { Input } from '../../components';
+import { Input, Section, Title } from '../../components';
 import { authFormSchema, Role } from '../../constants';
 import { useResetForm } from '../../hooks';
 
@@ -58,8 +58,8 @@ export const Auth: FC = () => {
 	}
 
 	return (
-		<section className="padding--width flex flex-col items-center justify-center gap-5">
-			<h3 className="text-3xl font-semibold">Вход</h3>
+		<Section>
+			<Title title="Вход"/>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
 				className="flex-default flex-col gap-5 w-1/3"
@@ -99,6 +99,6 @@ export const Auth: FC = () => {
 					зарегистрироваться
 				</Link>
 			</p>
-		</section>
+		</Section>
 	);
 };

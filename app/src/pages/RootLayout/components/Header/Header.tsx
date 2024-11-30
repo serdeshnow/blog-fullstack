@@ -33,7 +33,7 @@ export const Header: React.FC = () => {
 
 			<ul className="flex-default gap-5">
 				<li>
-					<Icon linkTo="/" iconId="groups" />
+					<Icon linkTo="/users" iconId="groups" />
 				</li>
 				<li>
 					<Icon linkTo="/" iconId="new-post" />

@@ -1,6 +1,6 @@
-import { IAction } from '../../constants';
+import { IAction, type IUser } from '../../constants';
 
-const initialUsersState = {};
+const initialUsersState: IUser[] = [];
 
 export const usersReducer = (state = initialUsersState, action: IAction) => {
 	switch (action.type) {

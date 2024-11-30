@@ -8,13 +8,6 @@
 			"role_id": 0
 		},
 		{
-			"id": "002",
-			"login": "Setqbyte",
-			"password": "123qwerty",
-			"registered_at": "2025-09-23",
-			"role_id": 0
-		},
-		{
 			"login": "den",
 			"password": "1234",
 			"registered_at": "2022-05-01 19:45",

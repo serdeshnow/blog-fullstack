@@ -5,9 +5,9 @@ import {
 	// postReducer,
 	// postsReducer,
 	userReducer,
-	// usersReducer
+	usersReducer
 } from './reducers';
-import type { IAction, IApp, IUser } from '../constants';
+import { IAction, IApp, IUser } from '../constants';
 
 declare global {
 	interface Window {
@@ -18,7 +18,7 @@ declare global {
 interface IReducer {
 	app: (state: IApp, action: IAction) => IApp;
 	user: (state: IUser, action: IAction) => IUser;
-	// users: IUser[];
+	users: (state: IUser[], action: IAction) => IUser[];
 	// post: IPost;
 	// posts: IPost[];
 }
@@ -26,7 +26,7 @@ interface IReducer {
 const reducer = combineReducers<Partial<IReducer>>({
 	app: appReducer,
 	user: userReducer,
-	// users: usersReducer,
+	users: usersReducer,
 	// post: postReducer,
 	// posts: postsReducer,
 });
